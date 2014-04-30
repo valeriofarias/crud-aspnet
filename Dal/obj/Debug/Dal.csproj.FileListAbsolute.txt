@@ -1,0 +1,6 @@
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Dal\bin\Debug\Dal.dll
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Dal\bin\Debug\Dal.pdb
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Dal\bin\Debug\UltraDBFactoring.dll
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Dal\bin\Debug\UltraDBFactoring.xml
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Dal\obj\Debug\Dal.dll
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Dal\obj\Debug\Dal.pdb

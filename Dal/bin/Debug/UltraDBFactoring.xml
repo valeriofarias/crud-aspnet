@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UltraDBFactoring</name>
+    </assembly>
+    <members>
+        <member name="T:UltraDBFactoring.ConnectionFactoryDB">
+            <summary>
+            Class responsible for Connection Factory.
+            </summary>
+        </member>
+        <member name="M:UltraDBFactoring.ConnectionFactoryDB.CreateDataBaseObject(System.String)">
+            <summary>
+            Given a connection string, create the DbProviderFactory and the DbConnection.
+            </summary>
+            <param name="connectionName">The name of the connection.</param>
+            <returns>Returns the DbConnection if success; null on fail.</returns>
+        </member>
+        <member name="M:UltraDBFactoring.ConnectionFactoryDB.GetConnectionStringByName(System.String)">
+            <summary>
+            Gets the connection string given its connection name.
+            Assume uma string de conexão por provedor no arquivo de configuração.
+            </summary>
+            <param name="connectionName">The name of the connection.</param>
+            <returns>Returns a connection string if success; null on fail.</returns>
+        </member>
+        <member name="T:UltraDBFactoring.DataAccessHelper">
+            <summary>
+            Class responsible for Helping the access to the data information.
+            </summary>
+        </member>
+        <member name="F:UltraDBFactoring.DataAccessHelper.cnnFactory">
+            <summary>
+            Private member for Database factoring.
+            </summary>
+        </member>
+        <member name="F:UltraDBFactoring.DataAccessHelper.cnn">
+            <summary>
+            Connection object.
+            </summary>
+        </member>
+        <member name="M:UltraDBFactoring.DataAccessHelper.#ctor(System.Boolean)">
+            <summary>
+            The class constructor.
+            </summary>
+            <param name="openConnection">If true then opens the connection.</param>
+        </member>
+        <member name="M:UltraDBFactoring.DataAccessHelper.OpenConnection">
+            <summary>
+            Opens the connection to the database.
+            </summary>
+        </member>
+        <member name="M:UltraDBFactoring.DataAccessHelper.CloseConnection">
+            <summary>
+            Closes the connection to the database.
+            </summary>
+        </member>
+        <member name="M:UltraDBFactoring.DataAccessHelper.Fetch(System.String)">
+            <summary>
+            Method to fetch the data.
+            </summary>
+            <param name="sql">The command in SQL to query the data.</param>
+            <returns>Returns a DataTable.</returns>
+        </member>
+        <member name="M:UltraDBFactoring.DataAccessHelper.Execute(System.String)">
+            <summary>
+            Method for executing instructions like insert, update and delete data.
+            </summary>
+            <param name="sql">The command to run SQL statements insert, update, delete data.</param>
+            <returns>Number of rows affected.</returns>
+        </member>
+        <member name="M:UltraDBFactoring.DataAccessHelper.Dispose">
+            <summary>
+            Closes the connection when the Object is Disposed.
+            </summary>
+        </member>
+        <member name="P:UltraDBFactoring.DataAccessHelper.ActiveEnvironment">
+            <summary>
+            Retrieves the connection that must be performed.
+            </summary>
+        </member>
+        <member name="P:UltraDBFactoring.DataAccessHelper.IsConnectionOpened">
+            <summary>
+            Verifica se a conexão está aberta.
+            </summary>
+        </member>
+    </members>
+</doc>
