@@ -18,13 +18,8 @@ namespace Dal
             {
                 Behaviors.ConnectionMysql.openConnection();
 
-                //string query = "INSERT INTO groups (name) VALUES('" + this.Nome + "')";
-
-                //MySqlCommand cmd = new MySqlCommand(query, Behaviors.ConnectionMysql.returnConnection());
-                //cmd.ExecuteNonQuery();
-
                 MySqlCommand cmd = Behaviors.ConnectionMysql.returnConnection().CreateCommand();
-                cmd.CommandText = "INSERT INTO groups (name) VALUES(@name)";
+                cmd.CommandText = "INSERT INTO groups (name) VALUES (@name)";
                 cmd.Parameters.AddWithValue("@name", this.Nome);
                 cmd.ExecuteNonQuery();
 

@@ -13,7 +13,7 @@ namespace Dal.Behaviors
         
         public static MySqlConnection returnConnection()
         {
-            connectionString = "Server=127.0.0.1;Port=3306;Database=crud;Uid=root;Pwd=";
+            connectionString = "server=localhost;user=root;database=crud;port=3306;password=;"; ;
             MySqlConnection connection = new MySqlConnection(connectionString);
             
             return connection;
