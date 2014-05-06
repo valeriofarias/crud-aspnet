@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dal;
+using Core;
 
 namespace Bll
 {
     public class GroupsBll
     {
-        public void Save(string name, string type)
+        public void Save(string name, int type)
         {
+            Groups groups = new Groups { Name = name, Type = type };
             try
-            {
-                Dal.Groups groups = new Dal.Groups{ Name = name, Type = type };
-                groups.Save();
+            { 
+                GroupsDal.Save(groups);
             }
             catch (ApplicationException e)
             {
@@ -21,17 +23,31 @@ namespace Bll
             }
         }
 
-        public void Update(int id, string name, string type)
+        public void Update(int id, string name, int type)
         {
+            Groups groups = new Groups { Id = id, Name = name, Type = type };
             try
             {
-                Dal.Groups groups = new Dal.Groups{ Id = id, Name = name, Type = type };
-                groups.Update();
+                GroupsDal.Update(groups);
             }
             catch (ApplicationException e)
             {
                 throw new ApplicationException(e.Message);
             }
+        }
+
+        public Groups FindById(int id)
+        {
+            Groups groups = new Groups();
+            try
+            {
+                groups = GroupsDal.FindById(id);
+            }
+            catch (ApplicationException e)
+            {
+                throw new ApplicationException(e.Message);
+            }
+            return groups;
         }
     }
 }

@@ -1,8 +1,10 @@
 C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Interface\bin\Interface.dll
 C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Interface\bin\Interface.pdb
 C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Interface\bin\Bll.dll
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Interface\bin\Core.dll
 C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Interface\bin\Dal.dll
 C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Interface\bin\Bll.pdb
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Interface\bin\Core.pdb
 C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Interface\bin\Dal.pdb
 C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Interface\obj\Debug\Interface.csprojResolveAssemblyReference.cache
 C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Interface\obj\Debug\Interface.dll
