@@ -31,9 +31,27 @@ namespace Test
         }
 
         [TestMethod]
-        public void TestCPFValidationForNumbersInvalid()
+        public void TestCPFValidationForNumbersOnlyInvalid()
         {
             Assert.AreEqual(false, Bll.Components.Validation.CPFValidate("06784458775"));
+        }
+
+        [TestMethod]
+        public void TestCPFValidationForNumbersWithDotAndDashInvalid()
+        {
+            Assert.AreEqual(false, Bll.Components.Validation.CPFValidate("067.844.587-75"));
+        }
+
+        [TestMethod]
+        public void TestCPFValidationForNumbersWithDotInvalid()
+        {
+            Assert.AreEqual(false, Bll.Components.Validation.CPFValidate("067.844.587.75"));
+        }
+
+        [TestMethod]
+        public void TestCPFValidationForNumbersWithDashInvalid()
+        {
+            Assert.AreEqual(false, Bll.Components.Validation.CPFValidate("067-844-587-75"));
         }
     }
 }

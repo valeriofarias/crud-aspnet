@@ -9,31 +9,56 @@ namespace Dal
 {
     public class Groups
     {
-        public string Nome { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         public string Type { get; set; }
 
-        public string Save()
+        public void Save()
         {
+            MySqlConnection connection = Behaviors.ConnectionMysql.ReturnConnection();
+
             try
             {
-                Behaviors.ConnectionMysql.openConnection();
+                connection.Open();
 
-                MySqlCommand cmd = Behaviors.ConnectionMysql.returnConnection().CreateCommand();
-                cmd.CommandText = "INSERT INTO groups (name) VALUES (@name)";
-                cmd.Parameters.AddWithValue("@name", this.Nome);
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "INSERT INTO groups (name, type) VALUES (@name, @type)";
+                cmd.Parameters.AddWithValue("@name", this.Name);
+                cmd.Parameters.AddWithValue("@type", this.Type);
                 cmd.ExecuteNonQuery();
-
-                return "Salvo com sucesso!";
-
             }
             catch (MySqlException e)
             {
-                Console.WriteLine(e.Message);
-                return "Não pode ser salvo!";
+                throw new ApplicationException(e.Message);
             }
             finally
             {
-                Behaviors.ConnectionMysql.closeConnection();
+                connection.Close();
+            }
+        }
+
+        public void Update()
+        {
+            MySqlConnection connection = Behaviors.ConnectionMysql.ReturnConnection();
+
+            try
+            {
+                connection.Open();
+
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "UPDATE groups SET name = @name, type = @type WHERE id = @id";
+                cmd.Parameters.AddWithValue("@id", this.Id);
+                cmd.Parameters.AddWithValue("@name", this.Name);
+                cmd.Parameters.AddWithValue("@type", this.Type);
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException e)
+            {
+                throw new ApplicationException(e.Message);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
     }

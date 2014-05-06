@@ -1,7 +1,7 @@
-C:\Users\wescley.matos\Documents\Visual Studio 2012\Projects\Crud\Bll\bin\Debug\Bll.dll
-C:\Users\wescley.matos\Documents\Visual Studio 2012\Projects\Crud\Bll\bin\Debug\Bll.pdb
-C:\Users\wescley.matos\Documents\Visual Studio 2012\Projects\Crud\Bll\bin\Debug\Dal.dll
-C:\Users\wescley.matos\Documents\Visual Studio 2012\Projects\Crud\Bll\bin\Debug\Dal.pdb
-C:\Users\wescley.matos\Documents\Visual Studio 2012\Projects\Crud\Bll\obj\Debug\Bll.csprojResolveAssemblyReference.cache
-C:\Users\wescley.matos\Documents\Visual Studio 2012\Projects\Crud\Bll\obj\Debug\Bll.dll
-C:\Users\wescley.matos\Documents\Visual Studio 2012\Projects\Crud\Bll\obj\Debug\Bll.pdb
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Bll\bin\Debug\Bll.dll
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Bll\bin\Debug\Bll.pdb
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Bll\bin\Debug\Dal.dll
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Bll\bin\Debug\Dal.pdb
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Bll\obj\Debug\Bll.csprojResolveAssemblyReference.cache
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Bll\obj\Debug\Bll.dll
+C:\Users\wescley.matos\documents\visual studio 2012\Projects\Crud\Bll\obj\Debug\Bll.pdb

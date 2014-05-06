@@ -8,20 +8,30 @@ namespace Bll
 {
     public class GroupsBll
     {
-        public string Save(string nome, string type)
+        public void Save(string name, string type)
         {
-            try 
-	        {
-                Dal.Groups groups = new Dal.Groups();
-                groups.Nome = nome;
-                groups.Type = type;
-                
-                return groups.Save();
-	        }
+            try
+            {
+                Dal.Groups groups = new Dal.Groups{ Name = name, Type = type };
+                groups.Save();
+            }
             catch (ApplicationException e)
-	        {
-                return e.Message;
-	        }           
+            {
+                throw new ApplicationException(e.Message);
+            }
+        }
+
+        public void Update(int id, string name, string type)
+        {
+            try
+            {
+                Dal.Groups groups = new Dal.Groups{ Id = id, Name = name, Type = type };
+                groups.Update();
+            }
+            catch (ApplicationException e)
+            {
+                throw new ApplicationException(e.Message);
+            }
         }
     }
 }

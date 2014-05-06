@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="Interface.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Update.aspx.cs" Inherits="Interface.Update" %>
 
 <!DOCTYPE html>
 
@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <input type="text" name="id" placeholder="Id" />
         <input type="text" name="name" placeholder="Nome" />
         <input type="text" name="type" placeholder="Tipo" />
         <input type="submit" value="Enviar" />

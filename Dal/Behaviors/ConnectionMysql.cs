@@ -9,24 +9,10 @@ namespace Dal.Behaviors
 {
     public class ConnectionMysql
     {
-        public static string connectionString;
-        
-        public static MySqlConnection returnConnection()
+        public static MySqlConnection ReturnConnection()
         {
-            connectionString = "server=localhost;user=root;database=crud;port=3306;password=;"; ;
-            MySqlConnection connection = new MySqlConnection(connectionString);
-            
+            MySqlConnection connection = new MySqlConnection("server=localhost;user=root;database=crud;port=3306;password=;");
             return connection;
-        }
-
-        public static void openConnection()
-        {
-            ConnectionMysql.returnConnection().Open();
-        }
-
-        public static void closeConnection()
-        {
-            ConnectionMysql.returnConnection().Close();
         }
     }
 }
