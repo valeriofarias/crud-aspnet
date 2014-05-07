@@ -7,10 +7,13 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <input type="text" name="name" placeholder="Nome" />
-        <input type="text" name="type" placeholder="Tipo" />
-        <input type="submit" value="Enviar" />
-    </form>
+    <table>
+        <% foreach (Core.Groups group in this.listGroups) { %>
+        <tr>
+            <td><strong>Nome:</strong></td>
+            <td><% Response.Write(group.Name); %></td>
+        </tr>
+        <% } %>
+    </table>
 </body>
 </html>

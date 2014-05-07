@@ -49,5 +49,19 @@ namespace Bll
             }
             return groups;
         }
+
+        public List<Groups> FindAll()
+        {
+            List<Groups> listGroups = new List<Groups>();
+            try
+            {
+                listGroups = GroupsDal.FindAll();
+            }
+            catch (ApplicationException e)
+            {
+                throw new ApplicationException(e.Message);
+            }
+            return listGroups;
+        }
     }
 }

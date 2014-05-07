@@ -10,7 +10,7 @@ using Core;
 
 namespace Interface
 {
-    public partial class Update : System.Web.UI.Page
+    public partial class Edit : System.Web.UI.Page
     {
         public Groups groups = new Groups();
         
@@ -20,7 +20,7 @@ namespace Interface
             {
                 try
                 {
-                    new GroupsBll().Update(Convert.ToInt32(Request.Form["id"]), Request.Form["name"], Convert.ToInt32(Request.Form["type"]));   
+                    (new GroupsBll()).Update(Convert.ToInt32(Request.Form["id"]), Request.Form["name"], Convert.ToInt32(Request.Form["type"]));   
                     Response.Write("Atualizado com sucesso!");
                 }
                 catch (ApplicationException ex)
@@ -30,7 +30,7 @@ namespace Interface
             }
             else
             {
-                groups = new GroupsBll().FindById(Convert.ToInt32(Request.QueryString["id"]));
+                groups = (new GroupsBll()).FindById(Convert.ToInt32(Request.QueryString["id"]));
             }
         }
     }

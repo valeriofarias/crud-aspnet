@@ -8,7 +8,7 @@ using Bll;
 
 namespace Interface
 {
-    public partial class Index : System.Web.UI.Page
+    public partial class Add : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,14 +16,13 @@ namespace Interface
             {
                 try
                 {
-                    new GroupsBll().Save(Request.Form["name"], Convert.ToInt32(Request.Form["type"]));
+                    (new GroupsBll()).Save(Request.Form["name"], Convert.ToInt32(Request.Form["type"]));
                     Response.Write("Salvo com sucesso!");
                 }
                 catch (ApplicationException ex)
                 {
                     Response.Write(ex.Message);
                 }
-                
             }
         }
     }

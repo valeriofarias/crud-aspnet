@@ -61,8 +61,9 @@ namespace Dal
 
         public static Groups FindById(int id)
         {
-            MySqlConnection connection = Behaviors.ConnectionMysql.ReturnConnection();
             Groups groups = new Groups();
+
+            MySqlConnection connection = Behaviors.ConnectionMysql.ReturnConnection();
 
             try
             {
@@ -90,6 +91,42 @@ namespace Dal
             }
 
             return groups;
+        }
+
+        public static List<Groups> FindAll()
+        {
+            List<Groups> listGroups = new List<Groups>();
+            
+            MySqlConnection connection = Behaviors.ConnectionMysql.ReturnConnection();
+
+            try
+            {
+                connection.Open();
+
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT * FROM groups";
+                MySqlDataReader data = cmd.ExecuteReader();
+
+                while (data.Read())
+                {
+                    Groups groups = new Groups();
+                    groups.Id = Convert.ToInt32(data["id"]);
+                    groups.Name = data["name"].ToString();
+                    groups.Type = Convert.ToInt32(data["type"]);
+
+                    listGroups.Add(groups);
+                }
+            }
+            catch (MySqlException e)
+            {
+                throw new ApplicationException(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return listGroups;
         }
     }
 }

@@ -5,26 +5,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Bll;
+using Core;
 
 namespace Interface
 {
     public partial class Index : System.Web.UI.Page
     {
+        public List<Groups> listGroups = new List<Groups>();
+        public string msg = "teste";
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            try
             {
-                try
-                {
-                    GroupsBll groupsBll = new GroupsBll();
-                    groupsBll.Save(Request.Form["name"], Request.Form["type"]);
-                    Response.Write("Salvo com sucesso!");
-                }
-                catch (ApplicationException ex)
-                {
-                    Response.Write(ex.Message);
-                }
-                
+                listGroups = (new GroupsBll()).FindAll();
+            }
+            catch (ApplicationException ex)
+            {
+                Response.Write(ex.Message);
             }
         }
     }
